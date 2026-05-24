@@ -1,0 +1,16 @@
+[Cliente] 
+   │ (HTTP Request)
+   ▼
+[Middleware de Autenticação] (Shared)
+   │ (Se válido)
+   ▼
+[Controller] (Valida formato da requisição)
+   │ (Chama)
+   ▼
+[Service] (Aplica Regras de Negócio e Cálculos)
+   │ (Chama)
+   ▼
+[Repository] (Abstrai a Query/Persistência)
+   │
+   ▼
+[Banco de Dados]
