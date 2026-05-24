@@ -1,0 +1,29 @@
+tarefa-1: Engenharia Reversa e Mapeamento Arquitetural
+
+Descrição: Analisar o repositório atual, identificar acoplamentos rígidos e criar o plano de quebra de domínios.
+
+Critério de Aceite: Arquivo analise.md preenchido e aprovado pelo Tech Lead.
+
+tarefa-2: Isolamento do Módulo de Autenticação (Auth) e Middleware Global
+
+Descrição: Mover lógica de login/token para modules/auth. Criar o middleware fake em shared/middlewares.
+
+Critério de Aceite: Rotas de login isoladas; rotas privadas respondendo 401 sem token.
+
+tarefa-3: Modularização e Aplicação do Service/Repository em Produtos (Products)
+
+Descrição: Extrair lógica de produtos do banco de dados de dentro do controller. Criar as camadas ProductService e ProductRepository.
+
+Critério de Aceite: Controller de produtos contendo menos de 30 linhas de código por método.
+
+tarefa-4: Implementação do Módulo de Pedidos (Orders) com Factory Pattern
+
+Descrição: Criar a estrutura do módulo de pedidos. Aplicar o padrão Factory para instanciar o Controller injetando o Service e o Repository corretamente.
+
+Critério de Aceite: Instanciação do módulo centralizada em uma classe/função Factory.
+
+tarefa-5: Unificação de Configurações via Singleton e Fechamento do PR
+
+Descrição: Centralizar conexões fictícias de banco em shared/config usando Singleton. Atualizar o README.md com instruções de execução.
+
+Critério de Aceite: Sistema rodando ponta a ponta sem erros de importação circular.
