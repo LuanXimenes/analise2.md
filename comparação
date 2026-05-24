@@ -1,0 +1,8 @@
+Critério                        MVC Tradicional (Por Camadas)                                  Arquitetura Modular (Por Domínio)
+OrganizaçãoTécnica              (Controllers juntos, Models juntos).                           Funcional/Negócio (Cada módulo resolve um problema).
+EscalabilidadeDifícil.          Arquivos ficam gigantes e propensos a conflitos.               Alta. Novos módulos são adicionados sem impactar os antigos.
+Acoplamento                     Alto. Alterar um model pode quebrar múltiplos controllers.     Baixo. Módulos comunicam-se por interfaces claras.
+Reutilização                    Complexa, pois as funções dependem do contexto global.         Alta dentro do domínio; exportação simples de serviços.
+ManutençãoCusto                 alto. Difícil rastrear o fluxo da regra de negócio.            Facilitada. O bug de "pagamento" está estritamente na pasta payments.
+Separação de Resp.              Média. Controllers tendem a acumular lógica.Estrita.           Divisão clara: Controller ➔ Service ➔ Repository.
+Facilidade de Navegação         Ruim. Exige pular de pasta em pasta para uma mesma feature.    Excelente. Todo o contexto de uma funcionalidade está na mesma pasta.
