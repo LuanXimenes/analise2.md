@@ -14,3 +14,7 @@
    │
    ▼
 [Banco de Dados]
+
+Os módulos compartilham utilitários globais através do shared, mas mantêm independência entre si.
+Quando o módulo de orders precisa processar um pagamento, ele invoca o PaymentService exposto pelo 
+módulo correspondente, em vez de acessar a tabela de pagamentos diretamente.
