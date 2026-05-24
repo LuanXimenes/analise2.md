@@ -1,0 +1,7 @@
+Controllers Gordos : No MVC antigo, os controllers faziam mais do que intermediar a requisição. Eles continham regras de validação, cálculos de desconto (no caso de orders), criptografia de senha (auth) e chamadas diretas a frameworks de banco de dados.
+
+Mistura de Responsabilidades : Se a regra de negócio muda (ex: a forma de calcular o juro de um pagamento), o desenvolvedor precisava alterar o Controller. Isso viola o Princípio da Responsabilidade Única (SRP).
+
+Acoplamento Excessivo e Dificuldade de Navegação: Para criar uma nova funcionalidade em products, o desenvolvedor precisava abrir a pasta /controllers, depois /models, depois /views. Os arquivos que mudam juntos estavam espalhados distantes uns dos outros.
+
+Crescimento Desordenado: Com múltiplos desenvolvedores atuando no mesmo repositório, alterações em controllers geravam constantes conflitos de mesclagem (merge conflicts), pois todos mexiam nos mesmos arquivos centralizados.
