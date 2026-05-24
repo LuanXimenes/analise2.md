@@ -1,0 +1,4 @@
+Global Error Handler: Um middleware no final das rotas que captura qualquer exceção não tratada (try/catch) e retorna um JSON estruturado 
+({ status: "error", message: "Internal server error" }), evitando expor o stack trace para o cliente.
+
+Fake Auth Middleware: Um interceptor que checa se existe o cabeçalho Authorization: Bearer token123. Se não houver, bloqueia com 401 Unauthorized
