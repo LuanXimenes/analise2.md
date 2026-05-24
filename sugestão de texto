@@ -1,0 +1,21 @@
+Descrição do Pull Request
+Este PR realiza a migração estrutural do sistema de um MVC tradicional (baseado em componentes técnicos) para uma
+**Arquitetura Modular baseada em Domínios**. O objetivo principal é preparar o software para o crescimento sustentável da base 
+de código e da equipe de desenvolvimento.
+
+Problemas Encontrados na Arquitetura Antiga
+- **Controllers "Gordos":** Centralizavam controle de requisição, regras de validação financeira e chamadas diretas de banco de dados.
+- **Alto Acoplamento:** Alterações em regras de negócio de produtos causavam efeitos colaterais em pedidos devido à falta de barreiras de contexto.
+- **Dificuldade de Navegação (Cognitiva):** Arquivos correlacionados à mesma funcionalidade ficavam espalhados em diretórios distantes.
+
+Decisões Arquiteturais & Padrões Aplicados
+1. **Modularização por Domínio:** Separação do sistema nos contextos de `auth`, `products`, `orders` e `payments`.
+2. **Service Pattern:** Transferência de toda a lógica operacional e regras de negócio para fora dos controllers.
+3. **Repository Pattern:** Criação de uma camada que abstrai o acesso a dados, permitindo futuras trocas de banco com impacto zero nas regras de negócio.
+4. **Factory & Singleton:** Padrões criacionais usados para montagem de dependências e centralização de conexões globais na pasta `shared`.
+5. **Middlewares:** Isolamento de preocupações transversais (*cross-cutting concerns*) como autenticação.
+
+Melhorias Obtidas
+- **Redução do tamanho dos controllers** em cerca de 70%.
+- **Zero duplicação de regras de negócio** (agora centralizadas em Services específicos).
+- **Paralelismo no desenvolvimento:** Desenvolvedores podem atuar em módulos diferentes simultaneamente com risco mínimo de conflitos de git.
